@@ -24,7 +24,7 @@ O **Happy** é uma plataforma para que pessoas encontrem orfanatos perto de sua 
 
 
 
-## Techs :computer:<a name="techs" />
+## Techs ​⚙ ​<a name="techs" />
 
 - TypeScript
 
@@ -35,32 +35,52 @@ O **Happy** é uma plataforma para que pessoas encontrem orfanatos perto de sua 
 ## Clonando Repositório 🧲 <a name="clone"/>
 
 
-	$ git clone https://github.com/MateusHBR/HappyFrontEnd.git
+	$ git clone https://github.com/MateusHBR/happy.git
 		
 	# Acesse a pasta do projeto
 	
-	$ cd HappyFrontEnd
+	$ cd happy
 
 
 ## Executar código  ▶️ <a name="exec" />
 
-Acesse a pasta do projeto `$ cd web`
-
-Instale as Dependências:
+Acesse a pasta do projeto e instale as Dependências:
 
 - Caso use Yarn:
   1. **`yarn`**
-  2. **`yarn start`**
-
-
 
 - Caso use Npm:
   1. **`npm install`**
-  2. **`npm start`**
+  
+     
 
+### Versão WEB: :desktop_computer:
 
+Acesse a pasta do projeto `$ cd web`
+
+- Caso use Yarn:
+
+  **`yarn start`**
+
+- Caso use Npm:
+
+  **`npm start`**
+
+  
 
 E a aplicação web estará rodando no url: <a href="http://localhost:3000" target="_blank">http://localhost:3000 </a>
+
+
+
+### Versão Mobile: 📱
+
+em construção...
+
+
+
+### Backend: 💼
+
+em construção...
 
 
 
