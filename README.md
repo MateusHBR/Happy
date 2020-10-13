@@ -30,6 +30,8 @@ O **Happy** é uma plataforma para que pessoas encontrem orfanatos perto de sua 
 
 - ReactJS
 
+- Node.js
+
   
 
 ## Clonando Repositório 🧲 <a name="clone"/>
@@ -49,7 +51,7 @@ Acesse a pasta do projeto e instale as Dependências:
 - Caso use Yarn:
   
 1. **`yarn`**
-  
+
 - Caso use Npm:
   1. **`npm install`**
   
@@ -96,6 +98,16 @@ renomeie o arquvi **`.env.example`** para **`.env`**
 E pronto, o servidor estará rodando no url: <a href="http://localhost:3333" target="_blank">http://localhost:3333 </a>
 
 
+
+## Rotas:
+
+- **`POST /orphanages`**: A rota recebe um `name`, `latitude` , `longitude`, `about`,  `instructions`, `openingHours`,  `openOnWeekends` e podendo receber de 0 a multiplas imagens como parâmetro `images` dentro do corpo da requisição;
+
+- **`GET /orphanages`**: A rota lista todos os orfanatos;
+
+- **`GET /orphanages/:id`**: A rota listará apenas o orfanato passado por parâmetro;
+
+  
 
 ## Como contribuir 🛠 <a name="contribute" />
 
