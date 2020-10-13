@@ -4,7 +4,7 @@ import Orphanage from '../infra/typeorm/entities/Orphanage';
 import IOrphanagesRepository from '../repositories/IOrphanagesRepository';
 
 interface IRequest {
-  id: string;
+  id: number;
 }
 
 @injectable()

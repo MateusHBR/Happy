@@ -21,6 +21,10 @@ export default class OrphanagesController {
 
     const requestImages = request.files as Express.Multer.File[];
 
+    const images = requestImages.map(image => {
+      return { path: image.filename };
+    });
+
     const createOrphanageService = container.resolve(CreateOrphanageService);
 
     const orphanage = await createOrphanageService.execute({
@@ -31,7 +35,7 @@ export default class OrphanagesController {
       instructions,
       openingHours,
       openOnWeekends,
-      requestImages,
+      images,
     });
 
     return response.status(201).json(orphanageView.render(orphanage));
@@ -50,7 +54,7 @@ export default class OrphanagesController {
 
     const findOneOrphanageService = container.resolve(FindOneOrphanageService);
 
-    const orphanage = await findOneOrphanageService.execute({ id });
+    const orphanage = await findOneOrphanageService.execute({ id: Number(id) });
 
     return response.json(orphanageView.render(orphanage));
   }

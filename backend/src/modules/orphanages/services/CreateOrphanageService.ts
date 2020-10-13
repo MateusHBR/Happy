@@ -5,6 +5,9 @@ import Orphanage from '../infra/typeorm/entities/Orphanage';
 
 import IOrphanagesRepository from '../repositories/IOrphanagesRepository';
 
+type Images = Array<{
+  path: string;
+}>;
 interface IRequest {
   name: string;
   latitude: number;
@@ -13,7 +16,7 @@ interface IRequest {
   instructions: string;
   openingHours: string;
   openOnWeekends: boolean;
-  requestImages: Express.Multer.File[];
+  images: Images;
 }
 
 @injectable()
@@ -31,12 +34,8 @@ class CreateOrphanageService {
     instructions,
     openingHours,
     openOnWeekends,
-    requestImages,
+    images,
   }: IRequest): Promise<Orphanage> {
-    const images = requestImages.map(image => {
-      return { path: image.filename };
-    });
-
     const data = {
       name,
       latitude,
