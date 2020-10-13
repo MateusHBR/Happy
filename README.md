@@ -12,8 +12,10 @@
   	<a href="#techs"> Tecnologias </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    	<a href="#clone"> Clonando Repositório </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#exec"> Executar código </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#routes"> Rotas </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#contribute"> Contribuir </a>
 </p>
+
 
 
 
@@ -99,7 +101,7 @@ E pronto, o servidor estará rodando no url: <a href="http://localhost:3333" tar
 
 
 
-## Rotas:
+## Rotas: 🛣️ <a name="routes" />
 
 - **`POST /orphanages`**: A rota recebe um `name`, `latitude` , `longitude`, `about`,  `instructions`, `openingHours`,  `openOnWeekends` e podendo receber de 0 a multiplas imagens como parâmetro `images` dentro do corpo da requisição;
 
