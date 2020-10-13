@@ -1,11 +1,11 @@
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 import 'express-async-errors';
 
 import '@shared/infra/typeorm';
 import '@shared/container';
 
 import cors from 'cors';
-import AppError from '@shared/error/AppError';
+import errorHandler from '@shared/errors/errorHandler';
 import uploadConfig from '@config/upload';
 import routes from './routes';
 
@@ -16,23 +16,7 @@ app.use(cors());
 app.use('/uploads', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
-app.use(
-  (error: Error, request: Request, response: Response, _: NextFunction) => {
-    console.log(error);
-
-    if (error instanceof AppError) {
-      return response.status(error.statusCode).json({
-        status: 'error',
-        message: error.message,
-      });
-    }
-
-    return response.status(500).json({
-      status: 'error',
-      message: 'Internal Server Error',
-    });
-  },
-);
+app.use(errorHandler);
 
 app.listen(3333, () => {
   console.log('Server Started on port 3333');

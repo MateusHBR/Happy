@@ -1,4 +1,5 @@
 import { inject, injectable } from 'tsyringe';
+import * as Yup from 'yup';
 
 import Orphanage from '../infra/typeorm/entities/Orphanage';
 
@@ -36,7 +37,7 @@ class CreateOrphanageService {
       return { path: image.filename };
     });
 
-    const orphanage = await this.orphanagesRepository.create({
+    const data = {
       name,
       latitude,
       longitude,
@@ -45,7 +46,28 @@ class CreateOrphanageService {
       openingHours,
       openOnWeekends,
       images,
+    };
+
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      latitude: Yup.number().required(),
+      longitude: Yup.number().required(),
+      about: Yup.string().required().max(300),
+      instructions: Yup.string().required(),
+      openingHours: Yup.string().required(),
+      openOnWeekends: Yup.boolean().required(),
+      images: Yup.array(
+        Yup.object().shape({
+          path: Yup.string().required(),
+        }),
+      ),
     });
+
+    await schema.validate(data, {
+      abortEarly: false,
+    });
+
+    const orphanage = await this.orphanagesRepository.create(data);
 
     return orphanage;
   }

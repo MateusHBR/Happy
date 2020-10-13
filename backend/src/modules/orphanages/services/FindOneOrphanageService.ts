@@ -1,4 +1,4 @@
-import AppError from '@shared/error/AppError';
+import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 import Orphanage from '../infra/typeorm/entities/Orphanage';
 import IOrphanagesRepository from '../repositories/IOrphanagesRepository';
