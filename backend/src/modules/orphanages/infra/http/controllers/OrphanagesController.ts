@@ -5,6 +5,8 @@ import CreateOrphanageService from '@modules/orphanages/services/CreateOrphanage
 import ListOrphanagesService from '@modules/orphanages/services/ListOrphanagesService';
 import FindOneOrphanageService from '@modules/orphanages/services/FindOneOrphanageService';
 
+import orphanageView from '@modules/orphanages/views/orphanages_view';
+
 export default class OrphanagesController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
@@ -32,7 +34,7 @@ export default class OrphanagesController {
       requestImages,
     });
 
-    return response.status(201).json(orphanage);
+    return response.status(201).json(orphanageView.render(orphanage));
   }
 
   public async index(request: Request, response: Response): Promise<Response> {
@@ -40,7 +42,7 @@ export default class OrphanagesController {
 
     const orphanages = await listOrphanagesService.execute();
 
-    return response.json(orphanages);
+    return response.json(orphanageView.renderMany(orphanages));
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
@@ -50,6 +52,6 @@ export default class OrphanagesController {
 
     const orphanage = await findOneOrphanageService.execute({ id });
 
-    return response.json(orphanage);
+    return response.json(orphanageView.render(orphanage));
   }
 }

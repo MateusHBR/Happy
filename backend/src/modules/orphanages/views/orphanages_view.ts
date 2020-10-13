@@ -1,0 +1,20 @@
+import Orphanage from '../infra/typeorm/entities/Orphanage';
+import imagesView from './images_view';
+
+export default {
+  render(orphanage: Orphanage) {
+    return {
+      name: orphanage.name,
+      latitude: orphanage.latitude,
+      longitude: orphanage.longitude,
+      about: orphanage.about,
+      instructions: orphanage.instructions,
+      openingHours: orphanage.openingHours,
+      openOnWeekends: orphanage.openOnWeekends,
+      images: imagesView.renderMany(orphanage.images),
+    };
+  },
+  renderMany(orphanages: Orphanage[]) {
+    return orphanages.map(orphanage => this.render(orphanage));
+  },
+};
