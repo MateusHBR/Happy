@@ -20,6 +20,7 @@ class OrphanagesRepository implements IOrphanagesRepository {
     longitude,
     openOnWeekends,
     openingHours,
+    images,
   }: ICreateOrphanageDTO): Promise<Orphanage> {
     const orphanage = this.ormRepository.create({
       name,
@@ -29,9 +30,22 @@ class OrphanagesRepository implements IOrphanagesRepository {
       longitude,
       openingHours,
       openOnWeekends,
+      images,
     });
 
     await this.ormRepository.save(orphanage);
+
+    return orphanage;
+  }
+
+  public async list(): Promise<Orphanage[]> {
+    const orphanages = await this.ormRepository.find();
+
+    return orphanages;
+  }
+
+  public async findOne(id: string): Promise<Orphanage | undefined> {
+    const orphanage = await this.ormRepository.findOne(id);
 
     return orphanage;
   }

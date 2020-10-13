@@ -12,6 +12,7 @@ interface IRequest {
   instructions: string;
   openingHours: string;
   openOnWeekends: boolean;
+  requestImages: Express.Multer.File[];
 }
 
 @injectable()
@@ -29,7 +30,12 @@ class CreateOrphanageService {
     instructions,
     openingHours,
     openOnWeekends,
+    requestImages,
   }: IRequest): Promise<Orphanage> {
+    const images = requestImages.map(image => {
+      return { path: image.filename };
+    });
+
     const orphanage = await this.orphanagesRepository.create({
       name,
       latitude,
@@ -38,6 +44,7 @@ class CreateOrphanageService {
       instructions,
       openingHours,
       openOnWeekends,
+      images,
     });
 
     return orphanage;
