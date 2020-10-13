@@ -1,9 +1,10 @@
 import Image from '../infra/typeorm/entities/Image';
+import 'dotenv/config';
 
 export default {
   render(image: Image) {
     return {
-      url: `http://localhost:3333/uploads/${image.path}`,
+      url: `${process.env.URL}/${image.path}`,
     };
   },
   renderMany(images: Image[]) {
