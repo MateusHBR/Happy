@@ -47,8 +47,9 @@ O **Happy** é uma plataforma para que pessoas encontrem orfanatos perto de sua 
 Acesse a pasta do projeto e instale as Dependências:
 
 - Caso use Yarn:
-  1. **`yarn`**
-
+  
+1. **`yarn`**
+  
 - Caso use Npm:
   1. **`npm install`**
   
@@ -80,7 +81,19 @@ em construção...
 
 ### Backend: 💼
 
-em construção...
+Acesse a pasta do projeto `$ cd backend`
+
+renomeie o arquvi **`.env.example`** para **`.env`**
+
+- Caso use Yarn:
+
+  **`yarn start`**
+
+- Caso use Npm:
+
+  **`npm start`**
+
+E pronto, o servidor estará rodando no url: <a href="http://localhost:3333" target="_blank">http://localhost:3333 </a>
 
 
 
