@@ -87,7 +87,7 @@ em construção...
 
 Acesse a pasta do projeto `$ cd backend`
 
-renomeie o arquvi **`.env.example`** para **`.env`**
+renomeie o arquivo **`.env.example`** para **`.env`**
 
 - Caso use Yarn:
 
