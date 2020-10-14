@@ -91,11 +91,11 @@ renomeie o arquivo **`.env.example`** para **`.env`**
 
 - Caso use Yarn:
 
-  **`yarn start`**
+  **`yarn dev:server`**
 
 - Caso use Npm:
 
-  **`npm start`**
+  **`npm dev:server`**
 
 E pronto, o servidor estará rodando no url: <a href="http://localhost:3333" target="_blank">http://localhost:3333 </a>
 

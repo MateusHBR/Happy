@@ -34,7 +34,7 @@ export default class OrphanagesController {
       about,
       instructions,
       openingHours,
-      openOnWeekends,
+      openOnWeekends: Boolean(openOnWeekends),
       images,
     });
 

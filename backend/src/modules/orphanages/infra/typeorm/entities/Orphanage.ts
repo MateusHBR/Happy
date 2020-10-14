@@ -31,7 +31,7 @@ export default class Orphanage {
   @Column('varchar')
   openingHours: string;
 
-  @Column('boolean')
+  @Column()
   openOnWeekends: boolean;
 
   @OneToMany(() => Image, image => image.orphanage, {
