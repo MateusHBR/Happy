@@ -79,8 +79,27 @@ E a aplicação web estará rodando no url: <a href="http://localhost:3000" targ
 
 ### Versão Mobile: 📱
 
-em construção...
+Acesse a pasta do projeto e instale as Dependências:
 
+- Caso use Yarn:
+  
+1. **`yarn`**
+
+- Caso use Npm:
+  1. **`npm install`**
+
+
+Acesse a pasta do projeto `$ cd mobile`
+
+- Caso use Yarn:
+
+  **`yarn start`**
+
+- Caso use Npm:
+
+  **`npm start`**
+
+E pronto! Estará rodando o projeto em sua máquina com o Expo, e você precisa ter o aplicativo Expo que pode ser baixado pela Google Play ou App Store, ou rodar no seu emulador de Android caso use Windows ou Linux, e Iphone caso use MacOS.
 
 
 ### Backend: 💼
