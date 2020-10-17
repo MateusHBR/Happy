@@ -54,10 +54,10 @@ Acesse a pasta do projeto e instale as Dependências:
 
 - Caso use Yarn:
   
-1. **`yarn`**
+  **`yarn`**
 
 - Caso use Npm:
-  1. **`npm install`**
+  **`npm install`**
   
      
 
@@ -85,10 +85,10 @@ Acesse a pasta do projeto e instale as Dependências:
 
 - Caso use Yarn:
   
-1. **`yarn`**
+  **`yarn`**
 
 - Caso use Npm:
-  1. **`npm install`**
+  **`npm install`**
 
 
 Acesse a pasta do projeto `$ cd mobile`
