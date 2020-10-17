@@ -34,6 +34,8 @@ O **Happy** é uma plataforma para que pessoas encontrem orfanatos perto de sua 
 
 - Node.js
 
+- React Native
+
   
 
 ## Clonando Repositório 🧲 <a name="clone"/>
